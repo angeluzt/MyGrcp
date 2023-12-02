@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package org.example.greeting;
+
+option java_multiple_files = true;
+option java_package = "org.example";
+
+service GreetingService {
+  rpc greeting(GreetingRequest) returns (GreetingResponse){
+
+  }
+}
+
+message GreetingRequest {
+  string message = 1;
+}
+
+message GreetingResponse {
+  string message = 1;
+}
+
+service GreetingServiceList {
+  rpc multipleGreeting(GreetingRequestList) returns (GreetingResponseList){
+
+  }
+}
+
+message GreetingRequestList {
+  repeated string message = 1;
+}
+
+message GreetingResponseList {
+  repeated string message = 1;
+}
